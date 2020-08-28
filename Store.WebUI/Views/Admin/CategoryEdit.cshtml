@@ -1,0 +1,24 @@
+﻿@model CategoryDTO
+@{
+    ViewData["Title"] = "CategoryEdit";
+}
+@section pageHeader{
+    <h2 class="page-title">Category Edit</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="CategoryEdit" method="put">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="CategoryName">Kategori Adı</label>
+            <input asp-for="CategoryName" value="@Model.CategoryName" class="form-control">
+            <label asp-for="Description">Açıklama</label>
+            <input asp-for="Description" value="@Model.Description" class="form-control">
+
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Kategoriyi Güncelle</button>
+    </div>
+
+</form>

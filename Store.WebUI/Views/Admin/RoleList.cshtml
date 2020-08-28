@@ -1,0 +1,49 @@
+﻿@model IEnumerable<RoleDTO>
+@{
+    ViewData["Title"] = "RoleList";
+}
+
+
+@section pageHeader{
+    <h2 class="page-title">Role List</h2>
+}
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>ROLES
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (RoleDTO role in Model)
+                    {
+                    <tr>
+                        <td>@role.Id </td>
+                        <td>@role.Name</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" asp-action="RoleDelete" asp-route-id="@role.Id">Delete</a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

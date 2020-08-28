@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
+    <ProjectReference Include="..\Store.DTO\Store.DTO.csproj" />
+    <ProjectReference Include="..\Store.Mapping\Store.Mapping.csproj" />
+  </ItemGroup>
+
+</Project>

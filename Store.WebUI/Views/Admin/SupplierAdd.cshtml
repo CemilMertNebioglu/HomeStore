@@ -1,0 +1,30 @@
+﻿@model SupplierDTO
+@{
+    ViewData["Title"] = "SupplierAdd";
+}
+
+
+@section pageHeader{
+    <h2 class="page-title">Supplier Add</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="SupplierAdd" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="CompanyName">Company Name</label>
+            <input asp-for="CompanyName" class="form-control">
+            <label asp-for="City">City</label>
+            <input asp-for="City" class="form-control">
+            <label asp-for="Region">Region</label>
+            <input asp-for="Region" class="form-control">
+            <label asp-for="Adress">Adress</label>
+            <input asp-for="Adress" class="form-control">
+            <label asp-for="Phone">Phone</label>
+            <input asp-for="Phone" class="form-control">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Supplier Add</button>
+    </div>
+</form>

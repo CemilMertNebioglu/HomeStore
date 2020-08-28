@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DepartmentDTO>
+@{
+    ViewData["Title"] = "DepartmentList";
+}
+
+
+@section pageHeader{
+    <h2 class="page-title">Department List</h2>
+}
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>Departments
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> DepartmentName</th>
+                        <th> Description</th>
+                        <th> Phone</th>
+                        <th> RoleId</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (DepartmentDTO department in Model)
+                    {
+                        <tr>
+                            <td>@department.Id </td>
+                            <td>@department.DepartmentName</td>
+                            <td>@department.Description</td>
+                            <td>@department.Phone</td>
+                            <td>@department.RoleId</td>
+                            <td>
+                                <a class="btn btn-success btn-sm" asp-action="DepartmentEdit" asp-route-id="@department.Id">Edit</a>
+                                <a class="btn btn-danger btn-sm" asp-action="DepartmentDelete" asp-route-id="@department.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model DepartmentDTO
+@{
+    ViewData["Title"] = "DepartmentAdd";
+}
+
+@section pageHeader{
+    <h2 class="page-title">Department Add</h2>
+}
+a
+
+<form class="form-group d-inline-block col-6 border" asp-action="DepartmentAdd" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="DepartmentName">Department Name</label>
+            <input asp-for="DepartmentName" class="form-control">
+            <label asp-for="Description">Description</label>
+            <input asp-for="Description" class="form-control">
+            <label asp-for="Phone">Phone</label>
+            <input asp-for="Phone" class="form-control"> 
+            <label asp-for="RoleId">Phone</label>
+            <input asp-for="RoleId" class="form-control">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Department Add</button>
+    </div>
+
+</form>

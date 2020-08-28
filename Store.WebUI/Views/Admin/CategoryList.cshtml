@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CategoryDTO>
+@{
+    ViewData["Title"] = "CategoryList";
+}
+
+@section pageHeader{
+    <h2 class="page-title">Category List</h2>
+}
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>CATEGORIES
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> CategoryName</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (CategoryDTO category in Model)
+                    {
+                        <tr>
+                            <td>@category.Id </td>
+                            <td>@category.CategoryName</td>
+                            <td>
+                                <a class="btn btn-success btn-sm" asp-action="CategoryEdit" asp-route-id="@category.Id">Edit</a>
+                                <a class="btn btn-danger btn-sm" asp-action="CategoryDelete" asp-route-id="@category.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

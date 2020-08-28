@@ -1,0 +1,25 @@
+﻿@model RecPersonDTO
+@{
+    ViewData["Title"] = "RecPersonAdd";
+}
+
+
+@section pageHeader{
+    <h2 class="page-title">RecPerson Add</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="CategoryAdd" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="Cv">Person Name</label>
+            <input type="file" asp-for="Cv" class="form-control">
+
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Person Add</button>
+    </div>
+
+</form>
+

@@ -1,0 +1,36 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = "ProductEdit";
+}
+
+@section pageHeader{
+    <h2 class="page-title">Product Edit</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="ProductEdit" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <input type="hidden" asp-for="ProductDTO.Id" value="@Model.ProductDTO.Id"/>
+            <input type="hidden" asp-for="ProductDTO.CategoryDTO.Id" value="@Model.ProductDTO.CategoryDTO.Id" />
+            <label asp-for="ProductDTO.ProductName">Product Name</label>
+            <input asp-for="ProductDTO.ProductName">class="form-control">
+            <label asp-for="ProductDTO.UnitPrice">Price</label>
+            <input asp-for="ProductDTO.UnitPrice" class="form-control">
+            <label asp-for="ProductDTO.UnitsInStock">Stock</label>
+            <input asp-for="ProductDTO.UnitsInStock" class="form-control">
+            <label asp-for="ProductDTO.SalesPoint">Stock</label>
+            <input asp-for="ProductDTO.SalesPoint" class="form-control">
+            <div class=" form-group">
+                <label asp-for="ProductDTO.CategoryDTO.CategoryName">Category</label>
+                <select class="form-control" asp-for="ProductDTO.CategoryDTO.Id" asp-items="@ViewBag.Categories">
+                    <option>Select Category...</option>
+                </select>
+            </div>
+
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Product Edit</button>
+    </div>
+</form>

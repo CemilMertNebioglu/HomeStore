@@ -1,0 +1,23 @@
+﻿@model RoleDTO
+@{
+    ViewData["Title"] = "RoleAdd";
+}
+
+
+@section pageHeader{
+    <h2 class="page-title">Role Add</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="RoleAdd" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="Name">Role Name</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Role Add</button>
+    </div>
+
+</form>

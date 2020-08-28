@@ -1,0 +1,27 @@
+﻿@model ContractDTO
+@{
+    ViewData["Title"] = "ContractAdd";
+}
+
+@section pageHeader{
+    <h2 class="page-title">Contract Add</h2>
+}
+
+
+<form class="form-group d-inline-block col-6 border" asp-action="ContractAdd" method="post">
+    <div class="card-body col-12">
+
+        <div class="form-group">
+            <label asp-for="Title">Başlık</label>
+            <input asp-for="Title" class="form-control">
+            <label asp-for="ContractDate">Tarih</label>
+            <input asp-for="ContractDate" class="form-control">
+            <label asp-for="Content">Başlık</label>
+            <input asp-for="Content" class="form-control">
+
+        </div>
+        <br />
+        <button type="submit" class="btn btn-outline-success">Contract Ekle</button>
+    </div>
+
+</form>

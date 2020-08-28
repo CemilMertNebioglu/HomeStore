@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DealerDTO>
+@{
+    ViewData["Title"] = "DealerList";
+}
+
+@section pageHeader{
+    <h2 class="page-title">Dealer List</h2>
+}
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>Dealers
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+            <a href="javascript:;" class="remove"> </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> CompanyName</th>
+                        <th>City</th>
+                        <th>Region</th>
+                        <th>Adress</th>
+                        <th>Phone</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (DealerDTO dealer in Model)
+                    {
+                    <tr>
+                        <td>@dealer.Id </td>
+                        <td>@dealer.CompanyName</td>
+                        <td>@dealer.City</td>
+                        <td>@dealer.Region</td>
+                        <td>@dealer.Adress</td>
+                        <td>@dealer.Phone</td>
+                        <td>
+                            <a class="btn btn-success btn-sm" asp-action="DealerEdit" asp-route-id="@dealer.Id">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DealerDelete" asp-route-id="@dealer.Id">Delete</a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
